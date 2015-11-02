@@ -44,6 +44,9 @@ cd .paycoin
 nano paycoin.conf
 echo "### Changing to home directory"
 cd ~
+echo "###STOPING SERVICES"
+./paycoind stop
+sudo service apache2 stop
 echo "### Downloading the Web Interface"
 mkdir ~/WebInterface/
 cd ~/WebInterface/
