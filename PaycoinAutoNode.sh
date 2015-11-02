@@ -31,10 +31,6 @@ echo "### Installing Paycoin Core 0.3.2.0"
 unzip linux64.zip
 rm -f -r linux64.zip
 rm -f -r paycoin-qt
-echo "### Scheduling Cron Job to run Paycoin Core on boot"
-(crontab -l ; echo "@reboot ~/./paycoind")| crontab -
-echo "### System will now reboot"
-reboot
 echo "### Changing to paycoind directory"
 cd ~
 echo "### Stopping Paycoin Server"
