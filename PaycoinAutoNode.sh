@@ -36,12 +36,10 @@ echo "### Installing Paycoin Core 0.3.2.0"
 unzip linux64.zip
 rm -f -r linux64.zip
 rm -f -r paycoin-qt
-echo "### Scheduling Cron Job to run Paycoin Core on boot"
-(crontab -l ; echo "@reboot ~/./paycoind")| crontab -
 echo "### Changing to home directory"
 cd ~
 echo "### IN 30 SECONDS PLEASE WRITE DOWN YOUR RPCUSER AND RPCPASSWORD AND PRESS CTRL+X (WE WILL NEED THESE SOON)"
-sleep 30
+sleep 10
 cd .paycoin
 nano paycoin.conf
 echo "### Changing to home directory"
@@ -52,13 +50,12 @@ cd ~/WebInterface/
 wget -O uptime.py https://raw.githubusercontent.com/sk00t3r/PaycoinAutoNode/master/uptime.py
 wget -O WebInterface.py https://raw.githubusercontent.com/sk00t3r/PaycoinAutoNode/master/WebInterface.py
 echo "### IN 30 SECONDS CONFIGURE WEBINTERFACE.PY WITH RPC_USER, RPC_PASS, NODE_LOCATION, NODE_NAME, NODE_IP, DONATION_XPY_ADDR AND EXIT (DON’T FORGET TO SAVE)"
-sleep 30
+sleep 10
 nano WebInterface.py
 echo "### Installing the Web Interface"
 sudo python WebInterface.py
-echo "### Changing to home directory"
-cd ~
-echo "### Scheduling Cron Job to run WebInterface.py every 5 minutes"
+echo "### Scheduling Cron Job to run Paycoin Core on boot and WebInterface.py every 5 minutes"
+(crontab -l ; echo "@reboot ~/./paycoind")| crontab -
 (crontab -l ; echo "*/5 * * * * sudo python ~/WebInterface/WebInterface.py")| crontab -
 echo "### System will now reboot"
 reboot
