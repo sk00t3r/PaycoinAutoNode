@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import time
 
 TIMEFORMAT = "%m/%d/%y %H:%M:%S"
