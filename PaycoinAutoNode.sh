@@ -73,8 +73,8 @@ echo "### Installing the Web Interface"
 sudo python WebInterface.py
 echo "### Changing to home directory"
 cd ~
-echo "### Scheduling Cron Job to run WebInterface.py every 5 minutes and Paycoin Core on boot"
+echo "### Scheduling Cron Job to run WebInterface.py every 4 minutes and Paycoin Core on boot"
 (crontab -l ; echo "@reboot ~/./paycoind")| crontab -
-(crontab -l ; echo "*/5 * * * * sudo python ~/WebInterface/WebInterface.py")| crontab -
+(crontab -l ; echo "*/4 * * * * sudo python ~/WebInterface/WebInterface.py")| crontab -
 echo "### System will now reboot"
 reboot
