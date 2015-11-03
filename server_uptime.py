@@ -23,7 +23,6 @@ def server_uptime():
      days    = int( total_seconds / DAY )
      hours   = int( ( total_seconds % DAY ) / HOUR )
      minutes = int( ( total_seconds % HOUR ) / MINUTE )
-     seconds = int( total_seconds % MINUTE )
 
      # Build up the pretty string (like this: "N days, N hours, N minutes, N seconds")
      string = ""
