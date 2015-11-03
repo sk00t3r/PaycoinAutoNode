@@ -64,6 +64,7 @@ cd ~
 echo "### Downloading the Web Interface"
 mkdir ~/WebInterface/
 cd ~/WebInterface/
+wget -O osversion.py https://raw.githubusercontent.com/sk00t3r/PaycoinAutoNode/1-step-install/osversion.py
 wget -O cpu.py https://raw.githubusercontent.com/sk00t3r/PaycoinAutoNode/1-step-install/cpu.py
 wget -O server_uptime.py https://raw.githubusercontent.com/sk00t3r/PaycoinAutoNode/1-step-install/server_uptime.py
 wget -O WebInterface.py https://raw.githubusercontent.com/sk00t3r/PaycoinAutoNode/1-step-install/WebInterface.py
