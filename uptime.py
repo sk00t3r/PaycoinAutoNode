@@ -3,7 +3,7 @@ import os
 
 #----------------------------------------
 # Gives a human-readable uptime string
-def uptime():
+def server_uptime():
 
      try:
          f = open( "/proc/uptime" )
@@ -33,8 +33,4 @@ def uptime():
          string += str(hours) + " " + (hours == 1 and "hour" or "hours" ) + " and "
      if len(string) > 0 or minutes > 0:
          string += str(minutes) + " " + (minutes == 1 and "minute" or "minutes" )
-#     string += str(seconds) + " " + (seconds == 1 and "second" or "seconds" )
-
      return string;
-
-#print "The system uptime is:", uptime()
