@@ -1,40 +1,35 @@
-#!/usr/bin/python
-
 import time
 
-INTERVAL = 0.5
+TIMEFORMAT = "%m/%d/%y %H:%M:%S"
+INTERVAL = .5
 
 def getTimeList():
-    """
-    Fetches a list of time units the cpu has spent in various modes
-    Detailed explanation at http://www.linuxhowtos.org/System/procstat.htm
-    """
-    cpuStats = file("/proc/stat", "r").readline()
-    columns = cpuStats.replace("cpu", "").split(" ")
-    return map(int, filter(None, columns))
+    statFile = file("/proc/stat", "r")
+    timeList = statFile.readline().split(" ")[2:6]
+    statFile.close()
+    for i in range(len(timeList))  :
+        timeList[i] = int(timeList[i])
+    return timeList
 
-def deltaTime(interval):
-    """
-    Returns the difference of the cpu statistics returned by getTimeList
-    that occurred in the given time delta
-    """
-    timeList1 = getTimeList()
+def deltaTime(interval)  :
+    x = getTimeList()
     time.sleep(interval)
-    timeList2 = getTimeList()
-    return [(t2-t1) for t1, t2 in zip(timeList1, timeList2)]
+    y = getTimeList()
+    for i in range(len(x))  :
+        y[i] -= x[i]
+    return y
 
-def getCpuLoad():
-    """
-    Returns the cpu load as a value from the interval [0.0, 1.0]
-    """
-    dt = list(deltaTime(INTERVAL))
-    idle_time = float(dt[3])
-    total_time = sum(dt)
-    load = 1-(idle_time/total_time)
-    return load
+def cputotal():
 
 
-while True:
-    cputotal =  "CPU usage=%.2f%%" % (getCpuLoad()*100.0)
-#    print cputotal
-    time.sleep(0.1)
+#if __name__ == "__main__"  :
+#    while True  :
+        dt = deltaTime(INTERVAL)
+        timeStamp = time.strftime(TIMEFORMAT)
+        cpuPct = 100 - (dt[len(dt) - 1] * 100.00 / sum(dt))
+        total = str('%.0f' %cpuPct)
+        return total
+
+
+#print cputotal()
+
