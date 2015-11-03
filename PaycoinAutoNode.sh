@@ -66,7 +66,7 @@ mkdir ~/WebInterface/
 cd ~/WebInterface/
 wget -O cpu.py https://raw.githubusercontent.com/sk00t3r/PaycoinAutoNode/1-step-install/cpu.py
 wget -O server_uptime.py https://raw.githubusercontent.com/sk00t3r/PaycoinAutoNode/1-step-install/server_uptime.py
-wget -O WebInterface.py https://raw.githubusercontent.com/sk00t3r/PaycoinAutoNode/master/WebInterface.py
+wget -O WebInterface.py https://raw.githubusercontent.com/sk00t3r/PaycoinAutoNode/1-step-install/WebInterface.py
 echo "### IN 15 SECONDS CONFIGURE WEBINTERFACE.PY WITH RPC_USER, RPC_PASS, NODE_LOCATION, NODE_NAME, NODE_IP, DONATION_XPY_ADDR AND EXIT (DON’T FORGET TO SAVE)"
 sleep 15
 nano WebInterface.py
@@ -74,8 +74,8 @@ echo "### Installing the Web Interface"
 sudo python WebInterface.py
 echo "### Changing to home directory"
 cd ~
-echo "### Scheduling Cron Job to run WebInterface.py every 4 minutes and Paycoin Core on boot"
+echo "### Scheduling Cron Job to run Paycoin Core on boot and WebInterface.py every minute."
 (crontab -l ; echo "@reboot ~/./paycoind")| crontab -
-(crontab -l ; echo "*/4 * * * * sudo python ~/WebInterface/WebInterface.py")| crontab -
+(crontab -l ; echo "*/1 * * * * sudo python ~/WebInterface/WebInterface.py")| crontab -
 echo "### System will now reboot"
 reboot
