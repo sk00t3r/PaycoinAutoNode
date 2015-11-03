@@ -20,10 +20,6 @@ def deltaTime(interval)  :
     return y
 
 def cputotal():
-
-
-#if __name__ == "__main__"  :
-#    while True  :
         dt = deltaTime(INTERVAL)
         timeStamp = time.strftime(TIMEFORMAT)
         cpuPct = 100 - (dt[len(dt) - 1] * 100.00 / sum(dt))
