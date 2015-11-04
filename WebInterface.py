@@ -3,7 +3,9 @@ from bitcoinrpc.authproxy import AuthServiceProxy
 import time
 from server_uptime import server_uptime
 from cpu import cputotal
-from osversion import osver
+from osversion import distro
+from osversion import version
+from osversion import name
 
 rpc_user = ""
 rpc_pass = ""
@@ -94,7 +96,7 @@ ff.write("<h1>Paycoin Node: " + node_ip + ":8998<br \></h1>")
 
 ff.write("<h2>Server Statistics" + "<br \></h2>")
 ff.write("<h3>")
-ff.write("Operating System: " + osver() + "<br />\n")
+ff.write("Operating System: " + distro + version + name + "<br />\n")
 ff.write("Uptime: " + server_uptime() + "<br />\n")
 ff.write("Current CPU Usage: " + cputotal() + "%" + "<br />\n")
 
