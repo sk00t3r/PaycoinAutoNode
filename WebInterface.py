@@ -7,8 +7,17 @@ from cpu import cputotal
 from osversion import distro
 from osversion import version
 from osversion import name
+import subprocess
 
-ptime=sys.argsv[1]
+#ptime = subprocess.check_output("/root/WebInterface/ptime.sh", shell=True)
+#print(ptime)
+
+#hr = ptime[0:2]
+#mi = ptime[3:5]
+#se = ptime[6:8]
+
+#print(hr + mi + se)
+
 
 rpc_user = ""
 rpc_pass = ""
@@ -108,7 +117,7 @@ ff.write("<h2>Paycoin Node Statistics" + "<br \></h2>")
 ff.write("<h3>")
 ff.write("Last Updated: " + time.strftime("%l:%M:%S %p (%z %Z) on %-d %b %Y") + "<br \>\n")
 ff.write("Node Version: " + str(info['version']) + "<br \>\n")
-ff.write("Wallet Uptime: " + ptime + "<br \>\n")
+#ff.write("Wallet Running: " + (ptime) + "<br \>\n")
 
 ff.write("Protocol Version: " + str(info['protocolversion']) + "<br \>\n")
 ff.write("Connections: " + str(info['connections']) + "<br \>\n")
