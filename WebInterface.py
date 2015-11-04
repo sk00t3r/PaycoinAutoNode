@@ -96,8 +96,8 @@ ff.write("<h1>Paycoin Node: " + node_ip + ":8998<br \></h1>")
 
 ff.write("<h2>Server Statistics" + "<br \></h2>")
 ff.write("<h3>")
-ff.write("Operating System: " + distro + version + name + "<br />\n")
-ff.write("Uptime: " + server_uptime() + "<br />\n")
+ff.write("Operating System: " + distro + " " + version + " " + name + "<br />\n")
+ff.write("Server Uptime: " + server_uptime() + "<br />\n")
 ff.write("Current CPU Usage: " + cputotal() + "%" + "<br />\n")
 
 ff.write("<h2>Paycoin Node Statistics" + "<br \></h2>")
