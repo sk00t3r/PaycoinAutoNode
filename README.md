@@ -5,7 +5,7 @@ To set up on Ubuntu:
 
 cd /opt
 
-apt-get install git
+apt-get install git -y
 
 wget https://raw.githubusercontent.com/sk00t3r/PaycoinAutoNode/1-step-install/PaycoinAutoNode.sh
 
