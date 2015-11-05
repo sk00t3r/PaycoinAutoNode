@@ -7,7 +7,7 @@ echo "### Updating Ubuntu/Debian"
 sudo apt-get update -y
 sudo apt-get upgrade -y
 sudo apt-get dist-upgrade -y
-sudo apt-get install software-properties-common python-software-properties unzip ufw -y
+sudo apt-get install software-properties-common python-software-properties unzip ufw cron -y
 echo "### Allow ports 22, 80, 8998, 8999 and enable The Uncomplicated Firewall"
 sudo ufw allow 22/tcp
 sudo ufw allow 80/tcp
