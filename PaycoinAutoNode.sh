@@ -10,7 +10,9 @@ sudo apt-get dist-upgrade -y
 sudo apt-get install software-properties-common python-software-properties unzip ufw -y
 echo "### Allow ports 22, 8998 and enable The Uncomplicated Firewall"
 sudo ufw allow 22/tcp
+sudo ufw allow 80/tcp
 sudo ufw allow 8998/tcp
+sudo ufw allow 8999/tcp
 sudo ufw --force enable
 echo "### Creating Swap File"
 dd if=/dev/zero of=/swapfile bs=1M count=1024 ; mkswap /swapfile ; swapon /swapfile
@@ -39,14 +41,10 @@ echo "### Stopping Paycoin Server"
 ./paycoind stop
 echo "### Changing to home directory"
 cd ~
-echo "### Updating Ubuntu"
-sudo apt-get update -y
-sudo apt-get upgrade -y
-sudo apt-get dist-upgrade -y
+echo "### Installing pip and apache2"
 sudo apt-get install python-pip apache2 -y
-echo "### Allow ports 80 and enable The Uncomplicated Firewall"
-sudo ufw allow 80/tcp
-sudo ufw --force enable
+echo "### Updating pip"
+sudo sudo pip install --upgrade pip
 echo "### Installing python-bitcoinrpc"
 sudo pip install python-bitcoinrpc
 echo "### Changing to paycoind directory"
