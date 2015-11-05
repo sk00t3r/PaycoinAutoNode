@@ -7,17 +7,6 @@ from cpu import cputotal
 from osversion import distro
 from osversion import version
 from osversion import name
-import subprocess
-
-#ptime = subprocess.check_output("/root/WebInterface/ptime.sh", shell=True)
-#print(ptime)
-
-#hr = ptime[0:2]
-#mi = ptime[3:5]
-#se = ptime[6:8]
-
-#print(hr + mi + se)
-
 
 rpc_user = ""
 rpc_pass = ""
@@ -77,7 +66,7 @@ ff.write("font-family: 'Source Sans Pro','Open Sans','Helvetica Neue','Helvetica
 ff.write("}")
 
 ff.write("h3{")
-ff.write("font-size: 21px;")
+ff.write("font-size: 22px;")
 ff.write("font-weight: 200;")
 ff.write("letter-spacing: -0.01em;")
 ff.write("line-height: 1.14286;")
@@ -95,7 +84,7 @@ ff.write("}")
 
 ff.write("h1{")
 ff.write("color: #08c;")
-ff.write("font-size: 42px;")
+ff.write("font-size: 38px;")
 ff.write("font-weight: 200;")
 ff.write("letter-spacing: -0.01em;")
 ff.write("line-height: 1.14286;")
@@ -117,8 +106,6 @@ ff.write("<h2>Paycoin Node Statistics" + "<br \></h2>")
 ff.write("<h3>")
 ff.write("Last Updated: " + time.strftime("%l:%M:%S %p (%z %Z) on %-d %b %Y") + "<br \>\n")
 ff.write("Node Version: " + str(info['version']) + "<br \>\n")
-#ff.write("Wallet Running: " + (ptime) + "<br \>\n")
-
 ff.write("Protocol Version: " + str(info['protocolversion']) + "<br \>\n")
 ff.write("Connections: " + str(info['connections']) + "<br \>\n")
 ff.write("Blocks: " + str(info['blocks']) + "<br \>\n")
