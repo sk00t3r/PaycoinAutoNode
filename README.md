@@ -9,7 +9,7 @@ apt-get install git -y
 
 wget https://raw.githubusercontent.com/sk00t3r/PaycoinAutoNode/1-step-install/PaycoinAutoNode.sh
 
-chmod 777 PaycoinAutoNode.sh
+chmod 755 PaycoinAutoNode.sh
 
 ./PaycoinAutoNode.sh
 
