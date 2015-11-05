@@ -17,6 +17,7 @@ sudo iptables -A INPUT -p tcp -m tcp --dport 8999 -j ACCEPT
 sudo iptables-save
 echo "### Installing python-bitcoinrpc"
 sudo pip install python-bitcoinrpc
+sudo pip install --upgrade pip
 echo "### Changing to paycoind directory"
 cd ~
 echo "### Starting Paycoin Server"
