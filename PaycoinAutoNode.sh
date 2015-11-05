@@ -2,7 +2,7 @@
 echo "### Change to home directory"
 cd ~
 echo "### Installing sudo"
-apt-get install sudo -y
+apt-get install sudo -n
 echo "### Update Ubuntu"
 sudo apt-get update -y
 sudo apt-get upgrade -y
