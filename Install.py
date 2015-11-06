@@ -7,14 +7,14 @@ import os
 
 findos = (platform.linux_distribution()[0])
 
-if findos == "Ubuntu" or findos=="debian":
+if findos == "Ubuntu" or findos == "debian":
         url = "https://raw.githubusercontent.com/sk00t3r/PaycoinAutoNode/1-step-install/PaycoinAutoNodeDeb.sh"
         file_name = "PaycoinAutoNodeDeb.sh"
         urllib.urlretrieve(url, file_name)
         os.chmod("/opt/PaycoinAutoNodeDeb.sh", 755)
         subprocess.call("./PaycoinAutoNodeDeb.sh")
 
-elif findos == "CentOS Linux":
+elif findos == "CentOS Linux" or findos == "Fedora":
         url = "https://raw.githubusercontent.com/sk00t3r/PaycoinAutoNode/1-step-install/PaycoinAutoNodeRehl.sh"
         file_name = "PaycoinAutoNodeRehl.sh"
         urllib.urlretrieve(url, file_name)
