@@ -5,7 +5,9 @@ To set up:
 
 cd /opt
 
-apt-get install git -y
+For Ubuntu/Debian: apt-get install git -y
+
+For CentOS/RHEL: yum install git -y
 
 wget https://raw.githubusercontent.com/sk00t3r/PaycoinAutoNode/1-step-install/Install.py
 
