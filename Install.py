@@ -11,14 +11,14 @@ if findos == "Ubuntu" or "Debian":
         file_name = "PaycoinAutoNodeDeb.sh"
         urllib.urlretrieve(url, file_name)
 	os.chmod("/opt/PaycoinAutoNodeDeb.sh", 755)
-	subprocess.call("./PaycoinAutoNodeDeb.sh")
+#	subprocess.call("./PaycoinAutoNodeDeb.sh")
 
 if findos == "CentOS Linux":
         url = "https://raw.githubusercontent.com/sk00t3r/PaycoinAutoNode/1-step-install/PaycoinAutoNodeRehl.sh"
         file_name = "PaycoinAutoNodeRehl.sh"
         urllib.urlretrieve(url, file_name)
-	os.chmod("/opt/PaycoinAutoNodeRehl.sh", 755)
-	subprocess.call("./PaycoinAutoNodeRehl.sh")
+        os.chmod("/opt/PaycoinAutoNodeRehl.sh", 755)
+#	subprocess.call("./PaycoinAutoNodeRehl.sh")
 
 else:
         print "Operating System Not Supported, Please Install Manually"
