@@ -7,7 +7,7 @@ cd /opt
 
 For Ubuntu/Debian: apt-get install git python -y
 
-For CentOS/RHEL: yum install git python -y
+For CentOS/Fedora/RHEL: yum install git python -y
 
 wget https://raw.githubusercontent.com/sk00t3r/PaycoinAutoNode/1-step-install/Install.py
 
