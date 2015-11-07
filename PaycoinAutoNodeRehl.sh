@@ -10,12 +10,18 @@ sudo yum install unzip -y
 sudo yum install cronie -y
 sudo yum install nano -y
 sudo yum install epel-release -y
-echo "### Allow ports 22, 80, 8998, 8999 and save iptables"
-sudo iptables -A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
-sudo iptables -A INPUT -p tcp -m tcp --dport 8998 -j ACCEPT
-sudo iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
-sudo iptables -A INPUT -p tcp -m tcp --dport 8999 -j ACCEPT
-sudo iptables-save
+sudo yum install firewalld -y
+echo "### Allow ports 22, 80, 8998, 8999 and reload firewall"
+firewall-cmd --zone=public --add-port=22/tcp --permanent
+firewall-cmd --zone=public --add-port=80/tcp --permanent
+firewall-cmd --zone=public --add-port=8998/tcp --permanent
+firewall-cmd --zone=public --add-port=8999/tcp --permanent
+firewall-cmd --reload
+#sudo iptables -A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
+#sudo iptables -A INPUT -p tcp -m tcp --dport 8998 -j ACCEPT
+#sudo iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
+#sudo iptables -A INPUT -p tcp -m tcp --dport 8999 -j ACCEPT
+#sudo iptables-save
 echo "### Creating Swap File"
 dd if=/dev/zero of=/swapfile bs=1M count=1024 ; mkswap /swapfile ; swapon /swapfile
 echo "/swapfile swap swap defaults 0 0" >> /etc/fstab
