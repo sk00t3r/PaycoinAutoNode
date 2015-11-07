@@ -12,11 +12,11 @@ sudo yum install nano -y
 sudo yum install epel-release -y
 sudo yum install firewalld -y
 echo "### Allow ports 22, 80, 8998, 8999 and reload firewall"
-firewall-cmd --zone=public --add-port=22/tcp --permanent
-firewall-cmd --zone=public --add-port=80/tcp --permanent
-firewall-cmd --zone=public --add-port=8998/tcp --permanent
-firewall-cmd --zone=public --add-port=8999/tcp --permanent
-firewall-cmd --reload
+sudo firewall-cmd --zone=public --add-port=22/tcp --permanent
+sudo firewall-cmd --zone=public --add-port=80/tcp --permanent
+sudo firewall-cmd --zone=public --add-port=8998/tcp --permanent
+sudo firewall-cmd --zone=public --add-port=8999/tcp --permanent
+sudo firewall-cmd --reload
 #sudo iptables -A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
 #sudo iptables -A INPUT -p tcp -m tcp --dport 8998 -j ACCEPT
 #sudo iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
