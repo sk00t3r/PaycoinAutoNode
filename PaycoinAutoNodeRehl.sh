@@ -9,6 +9,7 @@ sudo yum upgrade -y
 sudo yum install unzip -y
 sudo yum install cronie -y
 sudo yum install nano -y
+sudo yum install epel-release -y
 echo "### Allow ports 22, 80, 8998, 8999 and save iptables"
 sudo iptables -A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
 sudo iptables -A INPUT -p tcp -m tcp --dport 8998 -j ACCEPT
