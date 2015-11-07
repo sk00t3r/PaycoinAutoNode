@@ -11,7 +11,8 @@ sudo yum install cronie -y
 sudo yum install nano -y
 sudo yum install epel-release -y
 sudo yum install firewalld -y
-echo "### Allow ports 22, 80, 8998, 8999 and reload firewall"
+echo "### Start FirewallD, allow ports 22, 80, 8998, 8999 and reload"
+sudo systemctl start firewalld
 sudo firewall-cmd --zone=public --add-port=22/tcp --permanent
 sudo firewall-cmd --zone=public --add-port=80/tcp --permanent
 sudo firewall-cmd --zone=public --add-port=8998/tcp --permanent
