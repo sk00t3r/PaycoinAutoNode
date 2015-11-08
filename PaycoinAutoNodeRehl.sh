@@ -83,6 +83,8 @@ wget -O WebInterface.py https://raw.githubusercontent.com/sk00t3r/PaycoinAutoNod
 echo "### IN 15 SECONDS CONFIGURE WEBINTERFACE.PY WITH RPC_USER, RPC_PASS, NODE_LOCATION, NODE_NAME, NODE_IP, DONATION_XPY_ADDR AND EXIT (DON’T FORGET TO SAVE)"
 sleep 15
 nano WebInterface.py
+echo "### Making WebInterface.py executable"
+chmod 755 WebInterface.py
 echo "### Installing the Web Interface"
 sudo python WebInterface.py
 echo "### Changing to home directory"
