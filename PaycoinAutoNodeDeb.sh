@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo "### Change to home directory"
 cd ~
 echo "### Installing sudo"
