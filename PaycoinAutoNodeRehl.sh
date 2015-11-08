@@ -92,6 +92,6 @@ cd ~
 echo "### Scheduling Cron Job to run Paycoin Core on boot and WebInterface.py every minute."
 (crontab -l ; echo "PATH=/usr/bin:/bin:/sbin:/usr/sbin")| crontab -
 (crontab -l ; echo "@reboot ~/./paycoind")| crontab -
-(crontab -l ; echo "* * * * * sudo python ~/WebInterface/WebInterface.py")| crontab -
+(crontab -l ; echo "* * * * * sudo python /root/WebInterface/WebInterface.py")| crontab -
 echo "### System will now reboot"
 reboot
