@@ -1,5 +1,4 @@
 #!/bin/bash
-
 echo "### Change to home directory"
 cd ~
 echo "### Installing sudo"
@@ -13,8 +12,8 @@ sudo yum install nano -y
 sudo yum install epel-release -y
 sudo yum install firewalld -y
 echo "### Starting cron and making cron load at boot"
-sudo service crond start
-sudo chkconfig crond on
+sudo systemctl start crond
+sudo systemctl enable crond
 echo "### Start FirewallD, allow ports 22, 80, 8998, 8999 and reload"
 sudo systemctl start firewalld
 sudo firewall-cmd --zone=public --add-port=22/tcp --permanent
