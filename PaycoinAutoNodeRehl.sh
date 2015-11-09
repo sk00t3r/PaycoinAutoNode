@@ -4,7 +4,7 @@ echo "### Change to home directory"
 cd ~
 echo "### Installing sudo"
 yum install sudo -y
-echo "### Updating Ubuntu/Debian"
+echo "### Updating CentOS/Fedora"
 sudo yum update -y
 sudo yum upgrade -y
 sudo yum install unzip -y
@@ -12,6 +12,9 @@ sudo yum install cronie -y
 sudo yum install nano -y
 sudo yum install epel-release -y
 sudo yum install firewalld -y
+echo "### Starting cron and making cron load at boot"
+sudo service crond start
+sudo chkconfig crond on
 echo "### Start FirewallD, allow ports 22, 80, 8998, 8999 and reload"
 sudo systemctl start firewalld
 sudo firewall-cmd --zone=public --add-port=22/tcp --permanent
